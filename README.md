@@ -1,6 +1,11 @@
 # Help Queue
 This project was built as an introduction to the React framework. It was coded by following lessons on learnhowtoprogram.com
 ---
+
+# Component Tree
+
+![Component Tree](HelpQueueDiagram.drawio.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
