@@ -5,6 +5,7 @@ This project was built as an introduction to the React framework. It was coded b
 # Component Tree
 
 ![Component Tree](HelpQueueDiagram.drawio.png)
+![Component Tree 2](HelpQueueDiagram2.drawio.png)
 
 # Getting Started with Create React App
 
