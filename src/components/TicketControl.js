@@ -3,9 +3,9 @@ import NewTicketForm from "./NewTicketForm";
 import TicketList from "./TicketList";
 import TicketDetail from './TicketDetail';
 import EditTicketForm from './EditTicketForm'
-import PageOne from "./PageOne";
-import PageTwo from "./PageTwo";
-import PageThree from "./PageThree";
+// import PageOne from "./PageOne";
+// import PageTwo from "./PageTwo";
+// import PageThree from "./PageThree";
 
 class TicketControl extends React.Component {
   constructor(props) {
