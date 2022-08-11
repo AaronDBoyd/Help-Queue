@@ -4,6 +4,7 @@ import TicketList from "./TicketList";
 import TicketDetail from './TicketDetail';
 import EditTicketForm from './EditTicketForm'
 import { connect } from 'react-redux';
+import PropTypes from "prop-types";
 // import PageOne from "./PageOne";
 // import PageTwo from "./PageTwo";
 // import PageThree from "./PageThree";
@@ -164,6 +165,16 @@ class TicketControl extends React.Component {
   // }
 }
 
-TicketControl = connect()(TicketControl);
+TicketControl.propTypes = {
+  mainTicketList: PropTypes.object
+};
+
+const mapStateToProps = state => {
+  return {
+    mainTicketList: state
+  }
+}
+
+TicketControl = connect(mapStateToProps)(TicketControl);
 
 export default TicketControl;
