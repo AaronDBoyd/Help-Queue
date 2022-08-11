@@ -3,6 +3,7 @@ import NewTicketForm from "./NewTicketForm";
 import TicketList from "./TicketList";
 import TicketDetail from './TicketDetail';
 import EditTicketForm from './EditTicketForm'
+import { connect } from 'react-redux';
 // import PageOne from "./PageOne";
 // import PageTwo from "./PageTwo";
 // import PageThree from "./PageThree";
@@ -150,5 +151,7 @@ class TicketControl extends React.Component {
   //   )
   // }
 }
+
+TicketControl = connect()(TicketControl);
 
 export default TicketControl;
