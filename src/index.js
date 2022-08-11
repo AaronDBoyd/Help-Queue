@@ -13,11 +13,12 @@ store.subscribe(() =>
   console.log(store.getState())
 );
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
+  // document.getElementById('root')
 );
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
