@@ -20,15 +20,15 @@ class TicketControl extends React.Component {
     };
   }
 
-  updateState = () => {
-    this.setState((prevState) => {
-      if (this.state.count === 4) {
-        return { count: 0 };
-      } else {
-        return { count: prevState.count + 1 };
-      }
-    });
-  };
+  // updateState = () => {
+  //   this.setState((prevState) => {
+  //     if (this.state.count === 4) {
+  //       return { count: 0 };
+  //     } else {
+  //       return { count: prevState.count + 1 };
+  //     }
+  //   });
+  // };
 
   handleAddingNewTicketToList = (newTicket) => {
     const { dispatch } = this.props;
@@ -41,6 +41,7 @@ class TicketControl extends React.Component {
       issue: issue,
     }
     dispatch(action);
+
     this.setState({formVisibleOnPage: false});
   };
 
@@ -70,6 +71,7 @@ class TicketControl extends React.Component {
       id: id
     }
     dispatch(action);
+
     this.setState({selectedTicket: null});
   }
 
@@ -89,6 +91,7 @@ class TicketControl extends React.Component {
       issue: issue,
     }
     dispatch(action);
+
     this.setState({
       editing: false,
       selectedTicket: null
