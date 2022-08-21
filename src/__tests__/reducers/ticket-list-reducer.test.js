@@ -1,5 +1,6 @@
 import ticketListReducer from "../../reducers/ticket-list-reducer";
 import * as c from './../../actions/ActionTypes';
+import { formatDistanceToNow } from 'date-fns';
 
 describe("ticketListReducer", () => {
   let action;
@@ -7,6 +8,10 @@ describe("ticketListReducer", () => {
     names: "Ryan & Aimen",
     location: "4b",
     issue: "Redux action is not working correctly.",
+    timeOpen: new Date(),
+    formattedWaitTime: formatDistanceToNow(new Date(), {
+      addSuffix: true
+    }),
     id: 1,
   };
 
@@ -29,12 +34,14 @@ describe("ticketListReducer", () => {
   });
 
   test("Should seccessfully add new ticket data to mainTicketList", () => {
-    const { names, location, issue, id } = ticketData;
+    const { names, location, issue, timeOpen, formattedWaitTime, id } = ticketData;
     action = {
       type: c.ADD_TICKET,
       names: names,
       location: location,
       issue: issue,
+      timeOpen: timeOpen,
+      formattedWaitTime: formattedWaitTime,
       id: id,
     };
 
@@ -43,6 +50,8 @@ describe("ticketListReducer", () => {
         names: names,
         location: location,
         issue: issue,
+        timeOpen: timeOpen,
+        formattedWaitTime: formattedWaitTime,
         id: id,
       },
     });
@@ -62,4 +71,24 @@ describe("ticketListReducer", () => {
       }
     });
   });
+
+  test('Should add a formatted wait time to ticket entry', () => {
+    const { names, location, issue, timeOpen, id } = ticketData;
+    action = {
+      type: c.UPDATE_TIME,
+      formattedWaitTime: '4 minutes ago',
+      id: id
+    };
+    expect(ticketListReducer({ [id] : ticketData }, action)).toEqual({
+      [id] : {
+        names: names,
+        location: location,
+        issue: issue,
+        timeOpen: timeOpen,
+        id: id,
+        formattedWaitTime: '4 minutes ago'
+      }
+    });
+  });
+
 });
