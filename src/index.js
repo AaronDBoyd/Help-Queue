@@ -27,13 +27,23 @@ const rrfProps = {
   createFirestoreInstance
 }
 
-ReactDOM.render(
+// ReactDOM.render(
+//   <Provider store={store}>
+//     <ReactReduxFirebaseProvider {...rrfProps}>
+//       <App />
+//     </ReactReduxFirebaseProvider>
+//   </Provider>,
+//   document.getElementById('root')
+// )
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <Provider store={store}>
     <ReactReduxFirebaseProvider {...rrfProps}>
       <App />
     </ReactReduxFirebaseProvider>
   </Provider>,
-  document.getElementById('root')
+  // document.getElementById('root')
 )
 
 

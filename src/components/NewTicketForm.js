@@ -3,6 +3,7 @@ import { v4 } from 'uuid';
 import PropTypes from "prop-types";
 import ReusableForm from './ReusableForm';
 import { formatDistanceToNow } from 'date-fns';
+import { useFirestore } from 'react-redux-firebase'
 
 
 export default function NewTicketForm(props) {
