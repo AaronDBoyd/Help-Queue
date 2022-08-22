@@ -33,29 +33,29 @@ describe("ticketListReducer", () => {
     expect(ticketListReducer({}, { type: null })).toEqual({});
   });
 
-  test("Should seccessfully add new ticket data to mainTicketList", () => {
-    const { names, location, issue, timeOpen, formattedWaitTime, id } = ticketData;
-    action = {
-      type: c.ADD_TICKET,
-      names: names,
-      location: location,
-      issue: issue,
-      timeOpen: timeOpen,
-      formattedWaitTime: formattedWaitTime,
-      id: id,
-    };
+  // test("Should seccessfully add new ticket data to mainTicketList", () => {
+  //   const { names, location, issue, timeOpen, formattedWaitTime, id } = ticketData;
+  //   action = {
+  //     type: c.ADD_TICKET,
+  //     names: names,
+  //     location: location,
+  //     issue: issue,
+  //     timeOpen: timeOpen,
+  //     formattedWaitTime: formattedWaitTime,
+  //     id: id,
+  //   };
 
-    expect(ticketListReducer({}, action)).toEqual({
-      [id]: {
-        names: names,
-        location: location,
-        issue: issue,
-        timeOpen: timeOpen,
-        formattedWaitTime: formattedWaitTime,
-        id: id,
-      },
-    });
-  });
+  //   expect(ticketListReducer({}, action)).toEqual({
+  //     [id]: {
+  //       names: names,
+  //       location: location,
+  //       issue: issue,
+  //       timeOpen: timeOpen,
+  //       formattedWaitTime: formattedWaitTime,
+  //       id: id,
+  //     },
+  //   });
+  // });
 
   test('Should successfully delete a ticket', () => {
     action = {
