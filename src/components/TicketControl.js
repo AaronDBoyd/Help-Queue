@@ -29,8 +29,6 @@ class TicketControl extends React.Component {
     );
   }
 
-  
-
   componentWillUnmount(){
     clearInterval(this.waitTimeUpdateTimer);
   }
@@ -59,8 +57,8 @@ class TicketControl extends React.Component {
   handleAddingNewTicketToList = (newTicket) => {
     const { dispatch } = this.props;
     
-    const action = a.addTicket(newTicket);
-    dispatch(action);
+    // const action = a.addTicket(newTicket);
+    // dispatch(action);
 
     const action2 = a.toggleForm();
     dispatch(action2);
@@ -98,16 +96,16 @@ class TicketControl extends React.Component {
     this.setState({editing: true});
   }
 
-  handleEditingTicketInList = (ticketToEdit) => {
-    const { dispatch } = this.props;
-    const action = a.addTicket(ticketToEdit);
-    dispatch(action);
+  // handleEditingTicketInList = (ticketToEdit) => {
+  //   const { dispatch } = this.props;
+  //   const action = a.addTicket(ticketToEdit);
+  //   dispatch(action);
 
-    this.setState({
-      editing: false,
-      selectedTicket: null
-    });
-  }
+  //   this.setState({
+  //     editing: false,
+  //     selectedTicket: null
+  //   });
+  // }
 
   render(){
     let currentlyVisibleState = null;
