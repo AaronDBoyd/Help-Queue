@@ -7,6 +7,9 @@ import { createStore } from 'redux';
 // import reducer from './reducers/ticket-list-reducer';
 import rootReducer from './reducers/index';
 import { Provider } from 'react-redux';
+import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
+import { createFirestoreInstance } from 'redux-firestore';
+import firebase from "./firebase";
 
 const store = createStore(rootReducer);
 
@@ -14,19 +17,34 @@ store.subscribe(() =>
   console.log(store.getState())
 );
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+
+const rrfProps = {
+  firebase,
+  config: {
+        userProfile: "users"
+    },
+  dispatch: store.dispatch,
+  createFirestoreInstance
+}
+
+ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <ReactReduxFirebaseProvider {...rrfProps}>
+      <App />
+    </ReactReduxFirebaseProvider>
   </Provider>,
-);
+  document.getElementById('root')
+)
+
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
-//   <React.StrictMode>
+//   <Provider store={store}>
 //     <App />
-//   </React.StrictMode>
+//   </Provider>,
 // );
+
+
 
 
 // If you want to start measuring performance in your app, pass a function
