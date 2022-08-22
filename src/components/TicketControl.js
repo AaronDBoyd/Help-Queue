@@ -34,16 +34,16 @@ class TicketControl extends React.Component {
     clearInterval(this.waitTimeUpdateTimer);
   }
 
-  updateTicketElapsedWaitTime = () => {
-    const { dispatch } = this.props;
-  Object.values(this.props.mainTicketList).forEach(ticket => {
-      const newFormattedWaitTime = formatDistanceToNow(ticket.timeOpen, {
-        addSuffix: true
-      });
-    const action = a.updateTime(ticket.id, newFormattedWaitTime);
-    dispatch(action);
-  });
-  }
+  // updateTicketElapsedWaitTime = () => {
+  //   const { dispatch } = this.props;
+  // Object.values(this.props.mainTicketList).forEach(ticket => {
+  //     const newFormattedWaitTime = formatDistanceToNow(ticket.timeOpen, {
+  //       addSuffix: true
+  //     });
+  //   const action = a.updateTime(ticket.id, newFormattedWaitTime);
+  //   dispatch(action);
+  // });
+  // }
 
   // updateState = () => {
   //   this.setState((prevState) => {
