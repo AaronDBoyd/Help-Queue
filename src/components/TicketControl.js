@@ -6,7 +6,7 @@ import EditTicketForm from './EditTicketForm'
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import * as a from './../actions';
-import { formatDistanceToNow } from 'date-fns';
+// import { formatDistanceToNow } from 'date-fns';
 import { withFirestore } from 'react-redux-firebase'
 // import PageOne from "./PageOne";
 // import PageTwo from "./PageTwo";
@@ -23,26 +23,28 @@ class TicketControl extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.waitTimeUpdateTimer = setInterval(() =>
-      this.updateTicketElapsedWaitTime(),
-    60000
-    );
-  }
+  // componentDidMount() {
+  //   this.waitTimeUpdateTimer = setInterval(() =>
+  //     this.updateTicketElapsedWaitTime(),
+  //   60000
+  //   );
+  // }
 
-  componentWillUnmount(){
-    clearInterval(this.waitTimeUpdateTimer);
-  }
+  // componentWillUnmount(){
+  //   clearInterval(this.waitTimeUpdateTimer);
+  // }
 
   // updateTicketElapsedWaitTime = () => {
-  //   const { dispatch } = this.props;
-  // Object.values(this.props.mainTicketList).forEach(ticket => {
-  //     const newFormattedWaitTime = formatDistanceToNow(ticket.timeOpen, {
-  //       addSuffix: true
-  //     });
-  //   const action = a.updateTime(ticket.id, newFormattedWaitTime);
-  //   dispatch(action);
-  // });
+  //   // const { dispatch } = this.props;
+  //   Object.values(this.props.firestore).forEach(ticket => {
+  //       const newFormattedWaitTime = formatDistanceToNow(ticket.timeOpen, {
+  //         addSuffix: true
+  //       });
+
+  //       this.props.firestore.update({collection: 'tickets', doc: ticket.id }, newFormattedWaitTime)
+  //     // const action = a.updateTime(ticket.id, newFormattedWaitTime);
+  //     // dispatch(action);
+  //   });
   // }
 
   // updateState = () => {
